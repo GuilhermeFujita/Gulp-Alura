@@ -1,10 +1,11 @@
 {
   "name": "projeto",
   "version": "1.0.0",
-  "description": "",
+  "description": "Curso de Gulp Alura - Instrutor: Flávio Almeida",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp"
   },
   "author": "Guilherme Sant Ana Fujita",
   "license": "ISC"

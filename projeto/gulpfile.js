@@ -2,18 +2,21 @@
 
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
+var clean = require('gulp-clean');
 
 //Tarefas
-
-//Cópia
-gulp.task('copy', function(){
+gulp.task('copy', ['clean'], function(){
     gulp.src('src/img/**/*')
         .pipe(gulp.dest('dist'));
 });
 
-//Otimização de imagens
-gulp.task('build-img', function(){
-    gulp.src('dist/img/**/*')
+gulp.task('clean', function(){
+    return gulp.src('dist')
+        .pipe(clean());
+});
+
+gulp.task('build-img', ['copy'], function(){
+    return gulp.src('dist/img/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest('dist/img'));
 });

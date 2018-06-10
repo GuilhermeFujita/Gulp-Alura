@@ -8,5 +8,9 @@
     "gulp": "gulp"
   },
   "author": "Guilherme Sant Ana Fujita",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-imagemin": "^2.3.0"
+  }
 }

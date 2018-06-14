@@ -7,6 +7,10 @@ var concat = require('gulp-concat');
 var htmlReplace = require('gulp-html-replace');
 
 //Tarefas
+gulp.task('default', ['copy'], function(){
+    gulp.start('build-img', 'build-html', 'build-js')
+})
+
 gulp.task('copy', ['clean'], function(){
     gulp.src('src/**/*')
         .pipe(gulp.dest('dist'));
@@ -17,7 +21,7 @@ gulp.task('clean', function(){
         .pipe(clean());
 });
 
-gulp.task('build-img', ['copy'], function(){
+gulp.task('build-img', function(){
     return gulp.src('dist/img/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest('dist/img'));

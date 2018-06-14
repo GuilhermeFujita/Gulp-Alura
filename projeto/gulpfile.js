@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
+var htmlReplace = require('gulp-html-replace');
 
 //Tarefas
 gulp.task('copy', ['clean'], function(){
@@ -26,4 +27,12 @@ gulp.task('build-js', function(){
     gulp.src('dist/js/**/*.js')
         .pipe(concat('all.js'))
         .pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('build-html', function(){
+    gulp.src('dist/**/*.html')
+        .pipe(htmlReplace({
+            'js': 'js/all.js'
+        }))
+        .pipe(gulp.dest('dist/'));
 });

@@ -5,10 +5,11 @@ var imagemin = require('gulp-imagemin');
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var htmlReplace = require('gulp-html-replace');
+var uglify = require('gulp-uglify');
 
 //Tarefas
 gulp.task('default', ['copy'], function(){
-    gulp.start('build-img', 'build-html', 'build-js')
+    gulp.start('build-img', 'build-html', 'build-js');
 })
 
 gulp.task('copy', ['clean'], function(){
@@ -30,6 +31,7 @@ gulp.task('build-img', function(){
 gulp.task('build-js', function(){
     gulp.src('dist/js/**/*.js')
         .pipe(concat('all.js'))
+        .pipe(uglify())
         .pipe(gulp.dest('dist/js'));
 });
 

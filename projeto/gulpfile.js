@@ -8,7 +8,7 @@ var htmlReplace = require('gulp-html-replace');
 
 //Tarefas
 gulp.task('copy', ['clean'], function(){
-    gulp.src('src/img/**/*')
+    gulp.src('src/**/*')
         .pipe(gulp.dest('dist'));
 });
 

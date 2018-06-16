@@ -1,14 +1,15 @@
 //Variables
-var gulp        = require('gulp');
-var imagemin    = require('gulp-imagemin');
-var clean       = require('gulp-clean');
-var concat      = require('gulp-concat');
-var htmlReplace = require('gulp-html-replace');
-var uglify      = require('gulp-uglify');
-var usemin      = require('gulp-usemin');
-var cssmin      = require('gulp-cssmin');
-var browserSync = require('browser-sync');
-var jshint      = require('gulp-jshint'); 
+var gulp          = require('gulp');
+var imagemin      = require('gulp-imagemin');
+var clean         = require('gulp-clean');
+var concat        = require('gulp-concat');
+var htmlReplace   = require('gulp-html-replace');
+var uglify        = require('gulp-uglify');
+var usemin        = require('gulp-usemin');
+var cssmin        = require('gulp-cssmin');
+var browserSync   = require('browser-sync');
+var jshint        = require('gulp-jshint');
+var jshintStylish = require('jshint-stylish'); 
 
 //Tasks
 gulp.task('default', ['copy'], function() {

@@ -50,4 +50,11 @@ gulp.task('server', function(){
 
      gulp.watch('src/**/*').on('change', browserSync.reload);
 
+     //JShint
+     gulp.watch('src/js/*.js').on('change', function(event){
+        console.log('Linting ' + event.path);
+        gulp.src(event.path)
+            .pipe(jshint())
+     });
+
 });

@@ -8,6 +8,7 @@ var htmlReplace = require('gulp-html-replace');
 var uglify = require('gulp-uglify');
 var usemin = require('gulp-usemin');
 var cssmin = require('gulp-cssmin');
+var browserSync = require('browser-sync');
 
 //Tarefas
 gulp.task('default', ['copy'], function() {

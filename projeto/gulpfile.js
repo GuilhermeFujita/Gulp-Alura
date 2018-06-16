@@ -8,6 +8,7 @@ var uglify      = require('gulp-uglify');
 var usemin      = require('gulp-usemin');
 var cssmin      = require('gulp-cssmin');
 var browserSync = require('browser-sync');
+var jshint      = require('gulp-jshint'); 
 
 //Tasks
 gulp.task('default', ['copy'], function() {

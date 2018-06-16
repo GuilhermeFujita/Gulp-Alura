@@ -10,6 +10,7 @@ var cssmin        = require('gulp-cssmin');
 var browserSync   = require('browser-sync');
 var jshint        = require('gulp-jshint');
 var jshintStylish = require('jshint-stylish'); 
+var csslint       = require('gulp-csslint');
 
 //Tasks
 gulp.task('default', ['copy'], function() {

@@ -1,16 +1,15 @@
-//Variaveis
-
-var gulp = require('gulp');
-var imagemin = require('gulp-imagemin');
-var clean = require('gulp-clean');
-var concat = require('gulp-concat');
+//Variables
+var gulp        = require('gulp');
+var imagemin    = require('gulp-imagemin');
+var clean       = require('gulp-clean');
+var concat      = require('gulp-concat');
 var htmlReplace = require('gulp-html-replace');
-var uglify = require('gulp-uglify');
-var usemin = require('gulp-usemin');
-var cssmin = require('gulp-cssmin');
+var uglify      = require('gulp-uglify');
+var usemin      = require('gulp-usemin');
+var cssmin      = require('gulp-cssmin');
 var browserSync = require('browser-sync');
 
-//Tarefas
+//Tasks
 gulp.task('default', ['copy'], function() {
     gulp.start('build-img', 'usemin');
 });

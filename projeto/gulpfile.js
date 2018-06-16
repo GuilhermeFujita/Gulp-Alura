@@ -60,4 +60,12 @@ gulp.task('server', function(){
             .pipe(jshint.reporter(jshintStylish));
      });
 
+     //CSShint
+     gulp.watch('src/css/*.css').on('change', function(event){
+        console.log('Hinting ' + event.path);
+        gulp.src(event.path)
+            .pipe(csslint())
+            .pipe(csslint.reporter());
+     });
+
 });

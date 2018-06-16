@@ -39,3 +39,11 @@ gulp.task('usemin', function() {
     }))
     .pipe(gulp.dest('dist'));
 });
+
+gulp.task('server', function(){
+    browserSync.init({
+        server: {
+            baseDir: 'src'
+        }
+    });
+});

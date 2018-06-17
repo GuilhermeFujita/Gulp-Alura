@@ -12,6 +12,7 @@ var jshint        = require('gulp-jshint');
 var jshintStylish = require('jshint-stylish'); 
 var csslint       = require('gulp-csslint');
 var autoprefixer  = require('gulp-autoprefixer');
+var less          = require('gulp-less');
 
 //Tasks
 gulp.task('default', ['copy'], function() {
@@ -68,5 +69,15 @@ gulp.task('server', function(){
             .pipe(csslint())
             .pipe(csslint.reporter());
      });
+
+    //LESS
+     gulp.watch('src/less/*.less').on('change', function(event){
+        gulp.src(event.path)
+            .pipe(less().on('error', function(erro){
+                console.log('LESS Erro de compilação ' + erro.filename);
+                console.log(erro.message);
+            }))
+            .pipe(gulp.dest('src/css'));
+     })
 
 });

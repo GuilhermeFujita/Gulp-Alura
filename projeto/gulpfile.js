@@ -70,4 +70,11 @@ gulp.task('server', function(){
             .pipe(csslint.reporter());
      });
 
+    //LESS
+     gulp.watch('src/less/*.less').on('change', function(event){
+        gulp.src(event.path)
+            .pipe(less())
+            .pipe(gulp.dest('src/css'));
+     })
+
 });

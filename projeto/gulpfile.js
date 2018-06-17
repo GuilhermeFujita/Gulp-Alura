@@ -73,7 +73,10 @@ gulp.task('server', function(){
     //LESS
      gulp.watch('src/less/*.less').on('change', function(event){
         gulp.src(event.path)
-            .pipe(less())
+            .pipe(less().on('error', function(erro){
+                console.log('LESS Erro de compilação ' + erro.filename);
+                console.log(erro.message);
+            }))
             .pipe(gulp.dest('src/css'));
      })
 

@@ -12,6 +12,7 @@ var jshint        = require('gulp-jshint');
 var jshintStylish = require('jshint-stylish'); 
 var csslint       = require('gulp-csslint');
 var autoprefixer  = require('gulp-autoprefixer');
+var less          = require('gulp-less');
 
 //Tasks
 gulp.task('default', ['copy'], function() {
